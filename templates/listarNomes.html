@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+<head>
+<!-- Mestrado ou Doutorado -->	
+	<title>Alunos Inscritos em {{data["tipo"]}}</title>
+</head>
+<body>
+	<div id="Form"  >
+	<!-- data["pessoas"]: lista contendo dicionario com as informacoes do inscrito -->
+	<h1>Alunos Inscritos em {{data["tipo"]}}</h1>
+		<table style="width: 70%;" >	
+			<tr><td> Nome</td> <td> CPF</td>
+			{%for pessoa in data["pessoas"]%}
+				<tr>
+					<form action="/nana" method="POST">
+						<input style="display:none" type="text" name="CPF" value={{pessoa["CPF"]}} readonly>
+        				<td><button class="linkButton" type="submit"  >{{pessoa["Nome"]}}</button> </td>
+        				<td><button class="linkButton" type="submit"  >{{pessoa["CPF"]}}</button> </td>
+      				</form>
+				</tr>	
+			{%endfor%}
+
+		</table>
+	
+	<!-- action substituir pela rota correta -->	
+      <form action="/">
+        <BUTTON class="regularButton"  > Voltar</BUTTON> 
+      </form>
+	</div>
+</body>
+</html>

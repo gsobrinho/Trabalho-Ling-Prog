@@ -1,0 +1,95 @@
+<DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+  <head>
+    <title>{{data['Nome']}}</title>
+  </head>
+  <body>
+<div id="Form" >
+
+<h1>Formul&aacute;rio de inscri&ccedil;&atilde;o:</h1>
+
+
+<h2>Linha de Pesquisa:</h2>
+  <p>{{data["Linha De Pesquisa"]}}</p>
+<h2>Dados Pessoais:</h2>
+  <p>Nome: {{data['Nome']}}</p>
+  <p>Nome do Pai: {{data['NomePai']}}</p>
+  <p>Nome da M&atilde;e: {{data['NomeMae']}}</p>
+  <p>CPF:  {{data["CPF"]}} </p>
+  <p>
+  Data de Nascimento: {{data["BirthDay"]}}
+  </p>
+  <p>Sexo: {{data["Sexo"]}}</p>
+
+  <h2>Nacionalidade:</h2>
+<p>
+	{{data["Nacionalidade"]}}
+</p>
+  <p>Pa&iacute;s: {{data["Pais"]}}</p>
+  <p>Ano de Chegada: {{data["AnoChegada"]}}</p>
+
+  <h2>Endere&ccedil;o:</h2>
+    <p>Logradouro: {{data["Logradouro"]}}</p>
+    <p>N&uacute;mero: {{data["NumeroCasa"]}} </p>
+    <p>Complemento: {{data["Complemento"]}}</p>
+    <p>Bairro: {{data["Bairro"]}}</p>
+    <p>Munic&iacute;pio: {{data["Cidade"]}}</p>
+    <p>UF:  {{data["UF"]}}   </p>
+    <p>CEP: {{data["CEP"]}}  </p>
+
+  <p>Contato:</p>
+  <p>Telefone (residencial): {{data["TelefoneRes."]}}</p>
+  <p>Telefone (celular): {{data["TelefoneCel"]}}</p>
+  <p>Email: {{data["Email"]}}</p>
+
+  <p>Disponibilidade de Tempo: {{data["Disponibilidade"]}}</p>
+    <p>Justificativa:</p>
+    <p>{{data["JustificativaDisponibilidade"]}}</p>
+    <div></div>
+    <p>{{data["JustificativaOutros"]}} </p>
+
+      <p>Informa&ccedil;&otilde;es sobre V&iacute;nculo Empregat&iacute;cio:</p>
+      <p>Empresa: {{data["Empresa"]}}</p>
+      <p>Fun&ccedil;&atilde;o/Cargo: {{data["Cargo"]}}            </p>
+      <p>Telefone:  {{data["TelefoneEmpresa"]}} </p>
+      <p>E-mail {{data["EmailEmpresa"]}} </p>
+  <p>Identidade:</p>
+
+    <p>N&uacute;mero {{data["NumeroID"]}}   </p>
+    <p>Data de Emiss&atilde;o:  {{data["DataEmissaoID"]}} </p>
+    <p>Org&atilde;o: {{data["OrgaoEmissorID"]}}    </p>
+    <p>Estado: {{data["EstadoEmissorID"]}}  </p>
+
+  <p>T&iacute;tulo  Eleitoral:</p>
+    <p>N&uacute;mero: {{data["NumeroTitulo"]}}</p>
+    <p>Estado: {{data["EstadoTitulo"]}} </p>
+    <p>Zona Eleitoral {{data["ZonaEleitoral"]}}</p>
+    <p>Se&ccedil;&atilde;o Eleitoral: {{data["SecaoEleitoral"]}}</p>
+
+  <p>Certificado Militar ou Certificado de Dispensa Militar</p>    
+    <p>{{data["TipoCertificado"]}}</p>
+    <p>N&uacute;mero: {{data["NumeroCertificado"]}}    </p>
+    <p>Estado: {{data["EstadoCertificado"]}}   </p>
+    <p>Data de Emiss&atilde;o: {{data["DataEmissaoCertificado"]}} </p>
+    <p>Org&atilde;o: {{data["OrgaoCertificado"]}} </p>
+    <p>{{data["CategoriaCertificadoMilitar"]}} </p>
+
+  <h2>Forma&ccedil;&atilde;o Anterior </h2>
+    <p>Universidade: {{data["Universidade"]}} </p>
+    <p>Curso: {{data["Curso"]}} </p>
+    <p>Estado: {{data["EstadoFormacao"]}}  </p>
+    <p>Ano de Conclus&atilde;o: {{data["ConclusaoFormacao"]}}    </p>
+
+  <h1>Carta de Interesse</h1>
+    <div>{{data["Carta de Interesse"]}} </div>
+
+</div>
+
+<!-- Circles which indicates the steps of the form: -->
+
+
+
+  </body>
+</html>
