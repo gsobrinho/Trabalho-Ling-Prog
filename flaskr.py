@@ -14,6 +14,7 @@ PASSWORD = 'default'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
 def conectar_bd():
     return sqlite3.connect(app.config['DATABASE'])
 
@@ -32,6 +33,27 @@ def pre_requisicao():
 def encerrar_requisicao(exception):
     g.bd.close()
 
+@app.route("/")
+def inicial():
+  return render_template("Initial.html")
+
+@app.route("/formDoutorado")
+def formDoutorado():
+  return render_template("formDoutorado.html")
+
+
+@app.route("/formMestrado")
+def formMestrado():
+  return render_template("formMestrado.html")
+
+@app.route("/cadatroConcluido",methods=['GET', 'POST'])
+def cadConcluido():
+    pessoa = request.form
+    #salve Pessoa no BD
+    return render_template('visualizarPessoa.html', data=pessoa)
+ 
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     erro = None
@@ -43,9 +65,25 @@ def login():
         else:
             session['logado'] = True
             flash('Login OK')
+            #aki eu acho que já pode exibir o posLogin
             return redirect(url_for('exibir_entradas'))
     return render_template('login.html', erro=erro)
 
+
+
+@app.route("/insDoutorado")
+def inscDout():
+    # dict com os dados de aluno de Doutorado 
+    doutourado = {}
+    return render_template("listarNomes.html", data=doutourado)
+    
+@app.route("/insMestrado")
+def inscMest():
+    # dict com os dados de aluno de Doutorado 
+    mestrado = {}
+    return render_template("listarNomes.html", data=mestrado)
+    
 if __name__ == "__main__":
     app.run(debug=True)
+
 
