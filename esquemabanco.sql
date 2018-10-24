@@ -1,7 +1,7 @@
 drop table if exists entradas;
 create table entradas (
   id integer primary key autoincrement,
-  linha de pesquisa,
+  linha de pesquisa string,
   nome string,
   pai string,
   mae string,
@@ -37,6 +37,10 @@ create table entradas (
   estadocurso string,
   anoconclusao string,
   cartainteresse string
+<<<<<<< HEAD
   
   
+=======
+    
+>>>>>>> 5c688552b540ffc0eada7bd117b1a9ba397a4df9
 );
