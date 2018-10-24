@@ -5,11 +5,11 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 from contextlib import closing
 
 # configuração
-DATABASE = '/tmp/Testeflask.db'
+DATABASE = '/tmp/flaskr.db'
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
-PASSWORD = 'default'
+PASSWORD = '1234'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
