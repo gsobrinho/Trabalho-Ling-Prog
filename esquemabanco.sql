@@ -36,7 +36,7 @@ create table entradas (
   curso string,
   estadocurso string,
   anoconclusao string,
-  cartainteresse string,
+  cartainteresse string
   
   
 );

@@ -19,10 +19,14 @@ def conectar_bd():
     return sqlite3.connect(app.config['DATABASE'])
 
 def criar_bd():
+
     with closing(conectar_bd()) as bd:
+
         with app.open_resource('esquemabanco.sql',mode='r') as sql:
             bd.cursor().executescript(sql.read())
+		
         bd.commit()
+
 criar_bd()
 
 @app.before_request
@@ -58,9 +62,9 @@ def cadConcluido():
 def login():
     erro = None
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
-            error = 'Usuário inalido'
-        elif request.form['password'] != app.config['PASSWORD']:
+        if request.form['user'] != app.config['USERNAME']:
+            error = 'Usuario inalido'
+        elif request.form['senha'] != app.config['PASSWORD']:
             error = 'Senha invalida'
         else:
             session['logado'] = True
@@ -75,12 +79,16 @@ def login():
 def inscDout():
     # dict com os dados de aluno de Doutorado 
     doutourado = {}
+    doutourado["pessoas"] = []
+    doutourado["tipo"] = "Doutorado" 
     return render_template("listarNomes.html", data=doutourado)
     
 @app.route("/insMestrado")
 def inscMest():
     # dict com os dados de aluno de Doutorado 
     mestrado = {}
+    doutourado["pessoas"] = []
+    mestrado["tipo"] = "Doutorado" 
     return render_template("listarNomes.html", data=mestrado)
     
 if __name__ == "__main__":
