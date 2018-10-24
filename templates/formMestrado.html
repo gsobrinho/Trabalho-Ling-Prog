@@ -9,9 +9,11 @@
 <form id="Form" action="/cadatroConcluido" method="POST" >
 <h1>Formul&aacute;rio de inscri&ccedil;&atilde;o:</h1>
 <div>
-<h2>Linha de Pesquisa:</h2>
+<p><input style="display:none;" name="Tipo" value="Mestrado" ></p>
+<p>Linha de Pesquisa:</p>
   <select name="Linha De Pesquisa">
       <option value="">Selecione</option>
+
       <option value="Algoritimos e Metodos Numericos">Algoritimos e M&eacute;todos Num&eacute;ricos</option>
       <option value="Metodologia e Arquitetura de Sistemas Inteligentes">Metodologia e Arquitetura de Sistemas Inteligentes</option>
       <option value="Sistemas Inteligentes">Sistemas Inteligentes</option>
@@ -19,7 +21,7 @@
       <option value="Informatica, Educacao e Sociedade">Inform&aacute;tica, Educa&ccedil;&atilde;o e Sociedade</option>
     </select>   
   
-<h2>Dados Pessoais:</h2>
+<p>Dados Pessoais:</p>
   <p><input class="inputBox" name="Nome" placeholder="Nome" ></p>
   <p><input class="inputBox" placeholder="Nome do Pai" name="NomePai"></p>
   <p><input name="NomeMae" class="inputBox" placeholder="Nome da M&atilde;e" ></p>
@@ -34,20 +36,20 @@
       <option value="Masculino">Masculino</option>
     </select>   
   
-  <h2>Nacionalidade:</h2>
+  <p>Nacionalidade:</p>
 <p>
   <select name="Nacionalidade">
     <option value="">Selecione</option>
     <option value="Brasileiro">Brasileiro Nato</option>
-    <option value="Brasileiro Naturalizado">Brasileieo Naturalizado</option>
+    <option value="Brasileiro Naturalizado">Brasileiro Naturalizado</option>
     <option value="Equiparado">Equiparado</option>
     <option value="Estrangeiro">Estrangeiro</option>
   </select>
 </p>
-  <p> <input class="inputBox" placeholder="Pa&iacute;s" ></p> 
+  <p> <input nome=Pais class="inputBox" placeholder="Pa&iacute;s" ></p> 
   <p><input class="inputBox" placeholder="Ano de Chegada"type="" > </p>
 
-  <h2>Endere&ccedil;o:</h2>
+  <p>Endere&ccedil;o:</p>
     <p><input name="Logradouro" class="inputBox" placeholder="Logradouro"type="" ></p>
     <p><input name="NumeroCasa" class="inputBox" placeholder="N&uacute;mero"type="" ></p>
     <p><input name=Complemento class="inputBox"  placeholder="Complemento"type="" ></p>
@@ -91,7 +93,7 @@
     <p>Data de Emiss&atilde;o: <input name="birthDay"class="inputBox" type="date" ></p>
     <p><input name="OrgaoEmissorID" class="inputBox" placeholder="Org&atilde;o Emissor"  type="" ></p> 
     <p><input name="EstadoEmissorID" class="inputBox" placeholder="Estado Emissor"  type="" ></p> 
-
+<!--
   <p>T&iacute;tulo  Eleitoral:</p>
     <p><input name="NumeroTitulo" class="inputBox" placeholder="N&uacute;mero"  type="" ></p> 
     <p><input name="EstadoTitulo" class="inputBox" placeholder="Estado"  type="" ></p> 
@@ -123,7 +125,7 @@
     </p> 
     <p><input name="CategoriaCertificadoMilitar" class="inputBox" placeholder="Categoria (Para Certificado Militar)"  type="">
     </p> 
-
+-->
   <h2>Forma&ccedil;&atilde;o Anterior (Gradua&ccedil;&atilde;o)</h2>
     <p><input name="Universidade" class="inputBox" placeholder="Universidade"  type="" ></p>
     <p><input name="Curso" class="inputBox" placeholder="Curso"  type="" ></p>

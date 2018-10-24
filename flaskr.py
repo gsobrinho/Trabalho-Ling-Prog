@@ -59,14 +59,14 @@ def login():
     erro = None
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
-            error = 'Usuário inválido'
+            error = 'Usuário inalido'
         elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Senha inválida'
+            error = 'Senha invalida'
         else:
             session['logado'] = True
             flash('Login OK')
             #aki eu acho que já pode exibir o posLogin
-            return redirect(url_for('exibir_entradas'))
+            return  render_template("/posLogin.html")
     return render_template('login.html', erro=erro)
 
 
