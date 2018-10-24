@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+  <head>
+    <title>Inscri&ccedil;&atilde;o Mestrado</title>
+  </head>
+  <body>
+<form id="Form" action="" method="POST" >
+<h1>Formul&aacute;rio de inscri&ccedil;&atilde;o:</h1>
+<div>
+<h2>Linha de Pesquisa:</h2>
+  <select name="Linha De Pesquisa">
+      <option value="">Selecione</option>
+      <option value="Algoritimos e Metodos Numericos">Algoritimos e M&eacute;todos Num&eacute;ricos</option>
+      <option value="Metodologia e Arquitetura de Sistemas Inteligentes">Metodologia e Arquitetura de Sistemas Inteligentes</option>
+      <option value="Sistemas Inteligentes">Sistemas Inteligentes</option>
+      <option value="Sistemas de Informacao">Sistemas de Informa&ccedil;&atilde;o</option>
+      <option value="Informatica, Educacao e Sociedade">Inform&aacute;tica, Educa&ccedil;&atilde;o e Sociedade</option>
+    </select>   
+  
+<h2>Dados Pessoais:</h2>
+  <p><input class="inputBox" name="Nome" placeholder="Nome" ></p>
+  <p><input class="inputBox" placeholder="Nome do Pai" name="NomePai"></p>
+  <p><input name="NomeMae" class="inputBox" placeholder="Nome da M&atilde;e" ></p>
+  <p><input name="CPF" class="inputBox" placeholder="CPF" ></p>
+  <p>
+  Data de Nascimento: <input class="inputBox" type="date" name="birthDay">     
+  </p>
+  <p>Sexo:</p>
+    <select name="sexo">
+      <option value="">Selecione</option>
+      <option value="Feminino">Feminino</option>
+      <option value="Masculino">Masculino</option>
+    </select>   
+  
+  <h2>Nacionalidade:</h2>
+<p>
+  <select name="Nacionalidade">
+    <option value="">Selecione</option>
+    <option value="Brasileiro">Brasileiro Nato</option>
+    <option value="Brasileiro Naturalizado">Brasileieo Naturalizado</option>
+    <option value="Equiparado">Equiparado</option>
+    <option value="Estrangeiro">Estrangeiro</option>
+  </select>
+</p>
+  <p> <input class="inputBox" placeholder="Pa&iacute;s" ></p> 
+  <p><input class="inputBox" placeholder="Ano de Chegada"type="" > </p>
+
+  <h2>Endere&ccedil;o:</h2>
+    <p><input name="Logradouro" class="inputBox" placeholder="Logradouro"type="" ></p>
+    <p><input name="NumeroCasa" class="inputBox" placeholder="N&uacute;mero"type="" ></p>
+    <p><input name=Complemento class="inputBox"  placeholder="Complemento"type="" ></p>
+    <p><input name="Bairro" class="inputBox" placeholder="Bairro"  type="" ></p>
+    <p><input name="Cidade" placeholder="Munic&iacute;pio" class="inputBox"  type="" ></p>
+    <p><input name="UF" class="inputBox" placeholder="UF"  type="" ></p>
+    <p><input name=CEP class="inputBox" placeholder="CEP"  type="" ></p>
+
+  <p>Contato:</p>
+    <p><input name="TelefoneRes." class="inputBox" placeholder="Telefone (residencial)"  type="" ></p>
+    <p><input name="TelefoneCel" class="inputBox" placeholder="Celular"  type="" ></p>
+    <p><input  name="Email" class="inputBox" placeholder="Email"  type="" ></p>
+
+  <p>Disponibilidade de Tempo:</p>
+  
+    <table id = checkP>
+      <tr>
+      <td> <input  type="checkbox" name="Disponibilidade" value="Parcial">Parcial </td>
+      <td><input  type="checkbox" name="Disponibilidade" value="ParcialComBolsa">Parcial com Bolsa </td>
+      <td><input  type="checkbox" name="Disponibilidade" value="ParcialsemBolsa">Parcial sem Bolsa</td>
+      </tr>
+    </table>
+
+    <p>Justificativa:</p>
+      <table id = checkP>
+        <tr>
+        <td><input type="checkbox" name="JustificativaDisponibilidade" value="VinculoEmpregaticio"> V&iacute;nculo Empregat&iacute;cio</td>
+        <td><input type="checkbox" name="JustificativaDisponibilidade" value="RestricoesMedicas"> Restri&ccedil;&otilde;es M&eacute;dicas</td>
+        <td><input type="checkbox" name="JustificativaDisponibilidade" value="Outros">Outros</td>
+        </tr>
+      </table>  
+      <p><input name="JustificativaOutros" class="inputBox" placeholder="Outros"  type="" ></p>
+      <p>Informações sobre Vínculo Empregat&iacute;cio (Caso tenha):</p>
+        <p> <input name="Empresa" class="inputBox" placeholder="Empresa"  type="" ></p>
+        <p> <input name="Cargo" class="inputBox" placeholder="Fun&ccedil;&atilde;o/Cargo"  type="" ></p>
+        <p> <input name="TelefoneEmpresa" class="inputBox" placeholder="Telefone"  type="" ></p>
+        <p> <input name="EmailEmpresa" class="inputBox" placeholder="E-mail"  type="" ></p>
+  <p>Identidade:</p>
+
+    <p><input name="NumeroID" class="inputBox" placeholder="N&uacute;mero"  type="" ></p> 
+    <p>Data de Emiss&atilde;o: <input name="birthDay"class="inputBox" type="date" ></p>
+    <p><input name="OrgaoEmissorID" class="inputBox" placeholder="Org&atilde;o Emissor"  type="" ></p> 
+    <p><input name="EstadoEmissorID" class="inputBox" placeholder="Estado Emissor"  type="" ></p> 
+
+  <p>T&iacute;tulo  Eleitoral:</p>
+    <p><input name="NumeroTitulo" class="inputBox" placeholder="N&uacute;mero"  type="" ></p> 
+    <p><input name="EstadoTitulo" class="inputBox" placeholder="Estado"  type="" ></p> 
+    <p><input name="ZonaEleitoral" class="inputBox" placeholder="Zona Eleitoral"  type="" ></p> 
+    <p><input name="SecaoEleitoral" class="inputBox" placeholder="Se&ccedil;&atilde;o Eleitoral"  type="" ></p> 
+
+
+  <p>Certificado Militar ou Certificado de Dispensa Militar:</p>
+    <select name="TipoCertificado">
+      <option value="">Selecione</option>
+      <option value="Certificado Militar">Certificado Militar</option>
+      <option value="Certificado de Dispensa Militar">Certificado de Dispensa Militar</option>
+    </select>   
+  
+    <p><input name="NumeroCertificado" class="inputBox" placeholder="N&uacute;mero"  type="" ></p> 
+    <p><input name="EstadoCertificado" class="inputBox" placeholder="Estado"  type="" ></p> 
+    <p><input name="ZonaEleitoral" class="inputBox" placeholder="Zona Eleitoral"  type="" ></p> 
+    <p><input name="SecaoEleitoral" class="inputBox" placeholder="Se&ccedil;&atilde;o Eleitoral"  type="" ></p> 
+    <p>Org&atilde;o:
+      <select name="OrgaoCertificado">
+        <option value="">Selecione</option>
+        <option value="MinisterioDaDefesa">Minist&eacute;rio da Defesa</option>
+        <option value="MinisterioDoExercito">Minist&eacute;rio do Ex&eacute;rcito</option>
+        <option value="MinisterioDaMarinha">Minist&eacute;rio da Marinha</option>
+        <option value="MinisterioDaAeronautica">Minist&eacute;rio da Aeron&aacute;utica</option>
+        <option value="PoliciaMilitar">Pol&iacute;cia Militar</option>
+        <option value="CorpoDeDaBombeiro">Corpo de Bombeiro</option>
+      </select>
+    </p> 
+    <p><input name="CategoriaCertificadoMilitar" class="inputBox" placeholder="Categoria (Para Certificado Militar)"  type="">
+    </p> 
+
+  <h2>Forma&ccedil;&atilde;o Anterior (Gradua&ccedil;&atilde;o)</h2>
+    <p><input name="Universidade" class="inputBox" placeholder="Universidade"  type="" ></p>
+    <p><input name="Curso" class="inputBox" placeholder="Curso"  type="" ></p>
+    <p><input name="EstadoFormacao" class="inputBox" placeholder="Estado"  type="" ></p> 
+    <p><input name="ConclusaoFormacao" class="inputBox" placeholder="Ano de Conclus&atilde;o"  type="" ></p>
+
+  <h1>Carta de Interesse</h1>
+    <textarea name="Carta de Interesse" placeholder="Fa&ccedil;a uma reda&ccedil;&atilde;o expressando suas motiva&ccedil;&otilde;es e expectativas, tanto profissionais como acad&ecirc;micas, em rela&ccedil;&atilde;o ao curso" rows="30" cols="100"></textarea>
+    
+</div>
+<div style="overflow:auto;">
+  <div style="float:right;">
+    <button type="submit" id="SubmitBtn" formaction="" >Enviar</button>
+  </div>
+</div>
+</form>
+<!-- Circles which indicates the steps of the form: -->
+
+
+
+  </body>
+</html>
