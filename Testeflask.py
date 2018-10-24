@@ -13,40 +13,6 @@ PASSWORD = 'default'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-
-pessoa ={}
-pessoa["Nome"] = "Ana Mendes Sobrinho"
-pessoa["Linha De Pesquisa"] = "Sistemas Complexos Adaptativos"
-pessoa["NomePai"]="Sanderson Sobrinho" 
-pessoa["NomeMae" ]="Valeria Cristina Mendes" 
-pessoa["CPF" ]="12445532355" 
-pessoa["Sexo"]="Feminino"
-pessoa["Nacionalidade"]= "Estrangeiro"
-pessoa["AnoChegada"]= "XXXX"
-pessoa["Pais"]= "Acre"
-
-pessoa["Logradouro" ]="Rua sem nome"
-pessoa["NumeroCasa" ]="2012"
-pessoa["Complemento" ] = ""
-pessoa["Bairro" ]="Anchovas"
-pessoa["Cidade"] = "Rio de Japeri"
-pessoa["UF" ]="RJ" 
-pessoa["CEP" ]="26463200"
-
-
-pessoa["TelefoneRes." ]="2126614848"  
-pessoa["TelefoneCel" ]="21995442378"  
-pessoa["Email" ]="email@email.com"
-
-pessoa2 = pessoa.copy()
-
-
-pessoas = [pessoa, pessoa2]
-
-data={}
-data["pessoas"] = pessoas
-data["tipo"] = "Doutorado"
-
 def conectar_bd():
     return sqlite3.connect(app.config['DATABASE'])
 
@@ -67,7 +33,7 @@ def encerrar_requisicao(exception):
 
 @app.route("/listpessoa")
 def listpessoa():
-	
+
     return render_template('listarNomes.html', data=data)
 
 @app.route("/pessoa")
