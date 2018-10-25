@@ -3,6 +3,8 @@
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 from contextlib import closing
+import pickle
+from banco import *
 
 # configuração
 DATABASE = '/tmp/flaskr.db'
@@ -13,29 +15,6 @@ PASSWORD = '1234'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-
-
-def conectar_bd():
-    return sqlite3.connect(app.config['DATABASE'])
-
-def criar_bd():
-
-    with closing(conectar_bd()) as bd:
-
-        with app.open_resource('esquemabanco.sql',mode='r') as sql:
-            bd.cursor().executescript(sql.read())
-		
-        bd.commit()
-
-criar_bd()
-
-@app.before_request
-def pre_requisicao():
-    g.bd = conectar_bd()
-
-@app.teardown_request
-def encerrar_requisicao(exception):
-    g.bd.close()
 
 @app.route("/")
 def inicial():
@@ -53,19 +32,31 @@ def formMestrado():
 @app.route("/cadatroConcluido",methods=['GET', 'POST'])
 def cadConcluido():
     pessoa = request.form
-    #salve Pessoa no BD
+    updados(pessoa)
+    
     return render_template('visualizarPessoa.html', data=pessoa)
  
+@app.route("/visualizarPessoa",methods=['GET', 'POST'])
+def verPessoa():
 
+    aux = getDados()
+    pessoa = {}
+    for i in aux:
+        if i["CPF"] == request.form['CPF']:
+            pessoa = i
+             
+    
+    return render_template('visualizarPessoa.html', data=pessoa)
+ 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     erro = None
     if request.method == 'POST':
         if request.form['user'] != app.config['USERNAME']:
-            error = 'Usuario inalido'
+            erro = 'Usuario inalido'
         elif request.form['senha'] != app.config['PASSWORD']:
-            error = 'Senha invalida'
+            erro = 'Senha invalida'
         else:
             session['logado'] = True
             flash('Login OK')
@@ -75,20 +66,37 @@ def login():
 
 
 
+
 @app.route("/insDoutorado")
 def inscDout():
     # dict com os dados de aluno de Doutorado 
+   
+    aux = getDados()
     doutourado = {}
-    doutourado["pessoas"] = []
-    doutourado["tipo"] = "Doutorado" 
+    lista = []
+    doutourado["Tipo"] = "Doutorado"
+    for i in aux:
+        if i["Tipo"] == "Doutorado":
+            lista.append(i)
+
+    doutourado["pessoas"] = lista
+ 
     return render_template("listarNomes.html", data=doutourado)
     
 @app.route("/insMestrado")
 def inscMest():
     # dict com os dados de aluno de Doutorado 
+   
+    aux = getDados()
     mestrado = {}
-    doutourado["pessoas"] = []
-    mestrado["tipo"] = "Doutorado" 
+    lista = []
+    mestrado["Tipo"] = "Mestrado"
+    for i in aux:
+        if i["Tipo"] == "Mestrado":
+            lista.append(i)
+
+    mestrado["pessoas"] = lista
+ 
     return render_template("listarNomes.html", data=mestrado)
     
 if __name__ == "__main__":

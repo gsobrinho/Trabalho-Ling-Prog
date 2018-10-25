@@ -37,10 +37,7 @@ create table entradas (
   estadocurso string,
   anoconclusao string,
   cartainteresse string
-<<<<<<< HEAD
   
   
-=======
     
->>>>>>> 5c688552b540ffc0eada7bd117b1a9ba397a4df9
 );

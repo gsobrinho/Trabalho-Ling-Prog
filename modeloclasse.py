@@ -3,8 +3,8 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, Integ
 from wtforms.validators import DataRequired
 
 class LoginForm(Form):
-   
-  
+
+
   linha de pesquisa = StringField("linha de pesquisa", validators = [DataRequires()])
   nome = StringField("nome", validators = [DataRequires()])
   pai = StringField("pai", validators = [DataRequires()])
@@ -41,9 +41,9 @@ class LoginForm(Form):
   estadocurso = StringField("estadocurso", validators = [DataRequires()])
   anoconclusao = StringField("anoconclusao", validators = [DataRequires()])
   cartainteresse = StringField("cartainteresse", validators = [DataRequires()])
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
